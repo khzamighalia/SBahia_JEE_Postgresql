@@ -1,0 +1,159 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17 fév. 2021, 16:06:01
+    Author     : Admin
+*/
+
+.formRegister{
+   margin-top: 80px;
+   width: 30%;
+   margin-left: 35%;
+   height: 450px;
+   padding: 150px 10px 150px 10px;
+}
+.formRegister input {
+    background-color: #F6F6F6;
+}
+.formLogin{
+   margin-top: 80px;
+   width: 30%;
+   margin-left: 35%;
+   height: 350px;
+   padding: 150px 10px 150px 10px;
+}
+.formLogin input {
+    background-color: #F6F6F6;
+}
+.logo{
+    margin-left: 55px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.icon-menu{
+    margin-left: 10px;
+    width:50px;
+    height: 15px;
+}
+
+.btnRegister{
+    background-color: #556B2F;
+    padding : 7px 25px;
+    color: white;
+    margin-left: 35%;
+}
+.loglink{
+    background-color: #F6F6F6;
+    width: 110%;
+    height: 50px;
+    margin-left: -17px;
+    margin-top: 35px;
+    text-align: center;
+   
+}
+.loglink a p {
+    margin-top: 20px;
+}
+.session{
+    color: #556B2F;
+    float : right;
+}
+.cnt1{
+    width: 105%;
+    height: 400px;
+    background: lightblue url("vert.jpg") no-repeat fixed center;
+}
+.inputSearch{
+    border: 2px solid #556B2F;
+    padding: 10px 50px 10px 5px; 
+}
+.searchForm{
+    margin-top: 100px;
+    margin-left: 50px;
+}
+.btnSearch {
+    background-color:#556B2F;
+    color: white;
+    padding: 5px 20px;
+    margin-left: -5px;
+}
+.btnSearch2 {
+    background-color:#556B2F;
+    color: white;
+
+}
+.cnt2{
+    background-color: #F6F6F6;
+    margin-top: -10px;
+    width: 50%;
+    
+}
+.cntrow{
+    margin-top: 50px;
+}
+.cnt2 h4{
+    margin-top: 10px;
+}
+.price{
+    color: #556B2F;
+}
+.span{
+    margin-left: 180px;
+    color: #556B2F;
+}
+.heartt{
+    color:#556B2F; 
+}
+.cntt{
+    width: 100%;
+}
+.imgprod{
+        background-image:  url("pot1.jpg");
+
+ background-repeat: no-repeat;
+ height: 300px;
+
+    
+}
+.emptyheart{
+    font-size: 30px;
+    color: #556B2F;
+    margin-left: 210px;
+    margin-top: 10px;
+}
+
+.cnt4{
+    display: flex;
+}
+.cnt44{
+    margin-top: 20px;
+    width: 70%;
+}
+.btnAdd{
+    color: white;
+    margin-top: 10px;
+    background-color:#556B2F;
+    
+}
+.btnUD{
+    color: #556B2F;
+    border: 1px solid #556B2F;
+    
+}
+.logouticon{
+    color : #556B2F;
+    font-size: 25px;
+}
+a{
+    text-decoration: none;
+    color: #556B2F;
+}
+.cnt5{
+ background-image:  url("v11.jpg");
+ height: 150px;
+ width: 100%;
+
+}

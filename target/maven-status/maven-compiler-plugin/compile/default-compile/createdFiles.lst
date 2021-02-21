@@ -1,0 +1,11 @@
+models\Article.class
+models\User.class
+web\AccueilServlet.class
+ConnectionDB\Singleton.class
+web\LogoutServlet.class
+web\ControleurServlet.class
+repositories\IArticleDAO.class
+web\defaultServlet.class
+web\LoginServlet.class
+repositories\IUserDAO.class
+services\SUserDAO.class
