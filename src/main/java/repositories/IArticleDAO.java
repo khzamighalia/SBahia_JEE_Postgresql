@@ -5,6 +5,8 @@
  */
 package repositories;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.List;
 import models.Article;
@@ -20,4 +22,6 @@ public interface IArticleDAO {
     public List<Article> ChercherArticle(String name) throws SQLException;
     public Article ChercherArticleById(int id) throws SQLException;
     public void ModifierArticle(int id,String img,String titre,int vote,int prix) throws SQLException;
-           }
+   
+           
+}

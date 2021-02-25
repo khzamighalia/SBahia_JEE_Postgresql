@@ -1,3 +1,8 @@
+<%@page import="java.util.Base64"%>
+<%@page import="services.SArticleDAO"%>
+<%@page import="models.Article"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.sql.Statement" %>
 <%@page import="java.sql.DriverManager" %>
@@ -43,9 +48,7 @@
      <div class="row mx-md-n5">
          <div class="col-md-12 px-md-5">
           <a href='addForm.jsp'> <button type="button" class="btn btnAdd float-right"> + Ajouter un article </button></a>
-     </div>
-         </div>
-     <div class="container">
+     </divtainer">
          <center>
            <table class="table col-md-8 px-md-5">
               <tr>
@@ -55,14 +58,17 @@
                   <th scope="col"> Vote</th>
                   <th> Action </th>
               </tr>
-              <c:forEach items="${modelAcc.produits}" var="p" >
+            
+               request.setAttribute("pictures", imagelist);
+              <c:forEach items="${modelAcc.produits}" var="a" varStatus="status" >
                   <tr>
-                      <td>  </td>
-                      <td> ${p.titre}</td>
-                      <td> ${p.prix} </td>
-                      <td> ${p.vote} </td>
-                      <td><a href='updateForm.jsp?u=${p.id}'><button type="button" class="btn btnUD"><i  class="fas fa-pen"></i></button>
-</a><a href='delete.jsp?d=${p.id}'>  <button type="button" class="btn btnUD"><i class="fas fa-trash-alt"></i></button></a></td>
+                      <td> <img src="data:image/*;base64,${pictures[status.index]} ">
+  </td>
+                      <td> ${a.titre}</td>
+                      <td> ${a.prix} </td>
+                      <td> ${a.vote} </td>
+                      <td><a href='updateForm.jsp?u=${a.id}'><button type="button" class="btn btnUD"><i  class="fas fa-pen"></i></button>
+</a><a href='delete.jsp?d=${a.id}'>  <button type="button" class="btn btnUD"><i class="fas fa-trash-alt"></i></but</td>
 
                   </tr>
               </c:forEach>

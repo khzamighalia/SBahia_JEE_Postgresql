@@ -9,6 +9,9 @@ package services;
 
 
 import ConnectionDB.Singleton;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -49,14 +52,13 @@ public class SArticleDAO implements IArticleDAO {
             // code goes here ::
             connection = Singleton.getConnection();
             String query_POST = "INSERT INTO public.\"Article\"(\n" +
-"	titre, prix, vote, path, filename)\n" +
-"	VALUES (?, ?, ?, ?, ?);";
+"	titre, prix, vote, image)\n" +
+"	VALUES (?, ?, ?, ?);";
             statement = connection.prepareStatement(query_POST,PreparedStatement.RETURN_GENERATED_KEYS);
             statement.setString(1, A.getTitre());
             statement.setInt(2, A.getPrix());
             statement.setInt(3, 0);
-            statement.setString(4, A.getFilePath() );
-            statement.setString(5, A.getFileName());
+            statement.setBytes(4, A.getImage());
             state= statement.executeUpdate();
             ResultSet rs=statement.getGeneratedKeys();
              while (rs.next()) {
@@ -92,7 +94,7 @@ public class SArticleDAO implements IArticleDAO {
             while (rs.next()) {
                 Article A = new Article();
                 A.setId(rs.getInt(1));
-                //A.setImg(rs.getString(2));
+                A.setImage(rs.getBytes(2));
                 A.setTitre(rs.getString(3));
                 A.setPrix(rs.getInt(4));
                 A.setVote(rs.getInt(5));
@@ -271,9 +273,9 @@ public class SArticleDAO implements IArticleDAO {
                 statement.close();
             }
         }
-     
+
+
     }
-    
      
         
     

@@ -14,35 +14,40 @@ public class Article {
     private String titre;
     private int prix;
     private int vote;
-    private String fileName;
-    private String filePath;
+    private byte[] image;
 
     public Article() {
     }
 
     
-    public Article(int id,String titre, int prix, int vote,String fileName,String filePath) {
+    public Article(int id,String titre, int prix, int vote,byte[] image) {
         this.id = id;
         this.titre = titre;
         this.prix = prix;
         this.vote = vote;
-        fileName=this.fileName;
-        filePath=this.filePath;
+        this.image=image;
     }
 
-    public Article(String titre, int prix, int vote,String fileName,String filePath) {
+    public Article(String titre, int prix, int vote, byte[] image) {
         this.titre = titre;
         this.prix = prix;
         this.vote = vote;
-        fileName=this.fileName;
-        filePath=this.filePath;
+        this.image = image;
     }
     
-    public Article( String titre, int prix,String fileName,String filePath) {
+    /**
+     *
+     * @param titre
+     * @param prix
+     * @param vote
+     * @param image
+     */
+  
+    
+    public Article( String titre, int prix,byte[] image) {
         this.titre = titre;
         this.prix = prix;
-        fileName=this.fileName;
-        filePath=this.filePath;
+        this.image=image;
     }
 
    
@@ -83,26 +88,28 @@ public class Article {
         this.vote = vote;
     }
 
-    public String getFileName() {
-        return fileName;
+    public byte[] getImage() {
+        return image;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
-    public String getFilePath() {
-        return filePath;
-    }
-
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     @Override
     public String toString() {
-        return "Article{" + "id=" + id + ", titre=" + titre + ", prix=" + prix + ", vote=" + vote + ", fileName=" + fileName + ", filePath=" + filePath + '}';
+        return "Article{" + "id=" + id + ", titre=" + titre + ", prix=" + prix + ", vote=" + vote + ", image=" + image + '}';
     }
+
+    
+
+    
+ 
+    
+
+   
+
+    
 
     
 

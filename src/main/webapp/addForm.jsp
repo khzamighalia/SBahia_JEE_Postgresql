@@ -45,7 +45,9 @@
       <form action="Uploaddata" method="post" enctype="multipart/form-data">
   <div class="form-group">
     <label> Image </label>
-    <input type="file" name="file">
+  
+               <input type="file" class="file" name="image" accept="image/*" required  />
+   
   </div>        
   <div class="form-group">
     <label> Titre </label>

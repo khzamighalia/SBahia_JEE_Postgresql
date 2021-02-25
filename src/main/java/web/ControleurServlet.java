@@ -8,6 +8,8 @@ package web;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,8 +59,16 @@ public class ControleurServlet extends HttpServlet {
             ProduitModel model=new ProduitModel();
             model.setMotCle(motCle);
             List<Article> produits;
+            List<String> imagelist = new ArrayList<String>();
+            
             try {
                 produits = metier.ChercherArticle("%"+motCle+"%");
+                for (Article p : produits) {
+                    byte[] imageBytes = p.getImage();
+                System.out.println(imageBytes);
+                imagelist.add(Base64.getEncoder().encodeToString(imageBytes));
+                System.out.println(imagelist.get(0));
+            }
                 model.setProduits(produits);
             request.setAttribute("model", model);
             dispatcher.forward(request, response);

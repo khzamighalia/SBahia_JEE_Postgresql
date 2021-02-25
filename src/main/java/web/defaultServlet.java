@@ -8,6 +8,8 @@ package web;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,11 +37,25 @@ public class defaultServlet extends HttpServlet {
     @Override
   public void init() throws ServletException{
       metier = new SArticleDAO();
+      List<Article> ArticlesLists;
+      static List<String> imagelist;
+
+      
       
   }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+         imagelist = new ArrayList<String>();
+        
+         try {
+             ArticlesLists = metier.AfficherArticles();
+         } catch (SQLException ex) {
+             Logger.getLogger(defaultServlet.class.getName()).log(Level.SEVERE, null, ex);
+         }
+                    ArticlesLists.forEach(t -> {
+                        imagelist.add(Base64.getEncoder().encodeToString(t.getArticle_Flag()));
+                    });
          RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
             ProduitModel model2=new ProduitModel();
             List<Article> produits;
